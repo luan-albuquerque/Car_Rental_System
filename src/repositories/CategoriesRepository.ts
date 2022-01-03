@@ -1,13 +1,9 @@
 import { Category } from '../model/Category';
+import { ICategoriesRepository,ICategoriesRepositoryDTO } from './ICategoriesRepository';
 
-// Criando Interface - Conceito DTO 
-interface ICategoriesRepository{
-    name : String,
-    description : String  
-}
- 
 
-class CategoriesRepository {
+
+class CategoriesRepository implements ICategoriesRepository {
   // Atributo de Class 
   private categories: Category[];
   
@@ -17,7 +13,7 @@ class CategoriesRepository {
   }
 
   //Function Create
-  create({name , description}: ICategoriesRepository):void{
+  create({name , description}:ICategoriesRepositoryDTO) : void{
  
   const category = new Category();
 
@@ -39,7 +35,7 @@ class CategoriesRepository {
     return this.categories
 
   }
-  findName(name : String): Category{
+  findByName(name : String): Category{
     
      const result = this.categories.find(caregories=> caregories.name === name )
      return result;

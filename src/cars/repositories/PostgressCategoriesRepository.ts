@@ -1,7 +1,7 @@
 import { Category } from "../model/Category";
 import { ICategoriesRepository ,ICategoriesRepositoryDTO } from "./ICategoriesRepository";
 
-class PostgressCategoriesRepository implements ICategoriesRepository{
+class PostgresCategoriesRepository implements ICategoriesRepository{
   
   findByName(name: string): Category {
      console.log(name);
@@ -20,5 +20,5 @@ class PostgressCategoriesRepository implements ICategoriesRepository{
 
 }
 export {
-  PostgressCategoriesRepository
+  PostgresCategoriesRepository
 }

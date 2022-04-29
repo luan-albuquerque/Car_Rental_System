@@ -13,7 +13,7 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   //Function Create
-  create({name , description}:ICategoriesRepositoryDTO) : void{
+ create({name , description}:ICategoriesRepositoryDTO): void{
  
   const category = new Category();
 
@@ -30,18 +30,17 @@ class CategoriesRepository implements ICategoriesRepository {
      
   }
    
-  list(): Category[]{
+ list(): Category[]{
     
     return this.categories
 
   }
-  findByName(name : String): Category{
+ findByName(name : String): Category{
     
-     const result = this.categories.find(caregories=> caregories.name === name )
+     const result = this.categories.find(categories=> categories.name === name )
      return result;
   }
 
-  
 }
 
 export { CategoriesRepository }
